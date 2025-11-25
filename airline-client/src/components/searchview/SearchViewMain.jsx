@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import styles from '../../css/SearchViewMain.module.css'
+import styles from '../../css/SearchViewMain.module.css';
 import Hnav from '../Hnav';
-import SearchInput from './SearchInput'
+import Footer from '../global/Footer';
+import SearchInput from './SearchInput';
+import SearchOutput from './SearchOutput';
 
 function SearchViewMain() {
 
@@ -33,6 +35,8 @@ function SearchViewMain() {
                     <h2>With the largest fleet and flight network in the world, Sequel Airlines will take you there!</h2>
                 </div>
                 <SearchInput onInputChange={handleInputChange}></SearchInput>
+                <SearchOutput></SearchOutput>
+                <Footer></Footer>
             </div>
         </>
     )

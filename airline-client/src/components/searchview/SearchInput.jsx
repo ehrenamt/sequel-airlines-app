@@ -11,23 +11,28 @@ function SearchInput(onInputChange) {
                         <div className={styles.searchFormVerticalGroup}>
                             <p className={styles.inputLabel}>From</p>
                             <input 
-                            className={styles.inputTag} type="text" id="fname" name="search-input-origin-airport"
+                            className={styles.inputTag} type="text" id="search-input-origin-airport" name="search-input-origin-airport"
                             onChange={onInputChange}
                             />
                         </div>
                         <div className={styles.searchFormVerticalGroup}>
                             <p className={styles.inputLabel}>To</p>
-                            <input className={styles.inputTag} type="text" id="fname" name="search-input-origin-airport" onChange={onInputChange}></input>
+                            <input className={styles.inputTag} type="text" id="search-input-destination-airport" name="search-input-destination-airport" 
+                            onChange={onInputChange}
+                            />
                         </div>
                         <div className={styles.searchFormVerticalGroup}>
                             <p className={styles.inputLabel}>Date</p>
-                            <input className={styles.inputTag} type="date" onChange={onInputChange}></input>
+                            <input className={styles.inputTag} type="date" id="search-input-date"
+                            onChange={onInputChange}
+                            />
                         </div>
                         <div className={styles.searchFormVerticalGroup}>
                             <p className={styles.inputLabel}>Passengers</p>
-                            <input className={styles.inputTag} type="number" min="1" required onChange={onInputChange}></input>
+                            <input className={styles.inputTag} type="number" min="1" required onChange={onInputChange}
+                            />
                         </div>
-                        <input className={styles.submitButton} type="submit" value="Submit"></input>
+                        <input className={styles.submitButton} type="submit" value="Submit" />
                     </form>
                 </div>
             </div>

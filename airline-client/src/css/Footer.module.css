@@ -1,0 +1,23 @@
+.footerObject {
+    margin: 0;
+    padding: 0;
+
+    border-top: 1px grey solid;
+    background-color: white;
+
+}
+
+.hContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.vContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}

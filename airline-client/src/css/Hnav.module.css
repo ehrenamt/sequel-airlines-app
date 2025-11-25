@@ -16,50 +16,59 @@ Exactly one newline between each selector.
 
 /* 1. Type selectors */
 
+a {
+  font-style: none;
+  color: white;
+}
+
 /* 2. ID selectors */
 
 /* 3. Class selectors */
 
 .hnavObject {
-    /* position and size properties */
-    width: 100%;
-    box-sizing: border-box;
-    
+  /* position and size properties */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
 
+  /* additional colour properties */
+  color: white;
 }
 
 .hnavWrapper {
-    padding: 0px 12vw;
+  padding: 0px 12vw;
 }
 
 .hnav {
-    width: 100%;
-    padding: 15px 25px;
+  width: 100%;
+  padding: 15px 25px;
 
-    box-sizing: border-box;
-    /* borders */
-    border-bottom: 1px rgba(24, 24, 24);
-    border-left: 1px rgba(24, 24, 24);
-    border-right: 1px rgba(24, 24, 24);
-    border-radius: 5px;
+  box-sizing: border-box;
+  /* borders */
+  border-bottom: 1px rgba(24, 24, 24);
+  border-left: 1px rgba(24, 24, 24);
+  border-right: 1px rgba(24, 24, 24);
+  border-radius: 5px;
 
-    background-color: white;
-
+  background-color: oklch(28.2% 0.091 267.935);
 }
 
 .hnavLiObject {
-    /* position and size properties */
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  /* position and size properties */
+  margin: 0;
+  padding: 0;
+  width: 100%;
 
-    /* layout properties */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  /* layout properties */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-    /* font properties */
-    font-size: 1.25rem;
+  /* font properties */
+  font-size: 1.25rem;
 }
 
 .hnavLiItemObject {

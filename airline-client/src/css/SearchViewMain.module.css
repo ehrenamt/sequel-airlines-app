@@ -17,8 +17,8 @@ Exactly one newline between each selector.
 /* 1. Type selectors */
 
 h1 {
-    margin: 15px;
-    font-size: 28px;
+  margin: 15px;
+  font-size: 28px;
 }
 
 /* 2. ID selectors */
@@ -26,10 +26,12 @@ h1 {
 /* 3. Class selectors */
 
 .searchViewObject {
+  border-top: 4px solid oklch(28.2% 0.091 267.935);
+
   padding: 0;
   margin: 0;
 }
 
 .searchViewHeaderGroup {
-  padding: 10vh 12vw;
+  padding: 20vh 12vw 10vh 12vw;
 }

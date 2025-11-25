@@ -4,15 +4,35 @@ import styles from '../../css/TripView.module.css'
 function TripViewMain() {
 
     const apiUrlTripEndpoint = import.meta.env.GRAPHQL_API_URL_TRIP_ENDPOINT;
+
+    // Before the API request completes,
+    // there are a few miliseconds where the ayout renders without correct data.
+    // This hampers the user experience.
+    // To fix this, we need to provide default data such that
+    // the layout does not drastically change when displaying the correct data.
+    const defaultTrip = [
+        {
+            flightNumber: 'NaN', originAirport: 'This is a test value', destinationAirport: 'Please ignore', aircraftModel: 'TESTMOD',
+            departureTimeScheduled: '08:00', arrivalTimeScheduled: '10:00', status: 'TESTING',
+        },
+    ];
+
+    const defaultTrips = [];
+
+    for (let i = 0; i < 12; i++) {
+        defaultTrips.push(defaultTrip);
+    }
+
+    console.log(defaultTrips)
     
-    const [trips, setTrips] = useState([]);
+    const [trips, setTrips] = useState(defaultTrips);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
     const fetchTrips = async () => {
         try {
-        const response = await fetch('http://127.0.0.1:8000/userapi/tripinformation');
+        const response = await fetch('http://127.0.0.1:8000/userapi/tripinformatio');
         if (!response.ok) {
             throw new Error('Response returned not ok.');
         }
@@ -30,14 +50,14 @@ function TripViewMain() {
 
     fetchTrips();
 
-    const intervalId = setInterval(fetchTrips, 5000);
+    const intervalId = setInterval(fetchTrips, 9000);
 
     return () => clearInterval(intervalId);
     }, []);
 
     // Placeholder, we have some other ideas for loading values
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if ((isLoading && trips.length === 0)) return <p>Loading...</p>;
+    // if (error) return <p>Error: {error.message}</p>;
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -54,6 +74,7 @@ function TripViewMain() {
 
     console.log(trips)
 
+    // TODO revert on unmount
     // document.title = "Trip Information";
 
     return (
@@ -74,11 +95,11 @@ function TripViewMain() {
                 <div className={styles.columnHeader}>
                     <p className={styles.columnHeaderItemNarrowObject}>Vol #</p>
                     <p className={styles.columnHeaderItemLongObject}>De</p>
-                    <p className={styles.columnHeaderItemLongObject}>à</p>
+                    <p className={styles.columnHeaderItemLongObject}>À</p>
                     <p className={styles.columnHeaderItemStandardObject}>Avion</p>
                     <p className={styles.columnHeaderItemNarrowObject}>Départ</p>
                     <p className={styles.columnHeaderItemNarrowObject}>Arrivée</p>
-                    <p className={styles.columnHeaderItemNarrowObject}>état</p>
+                    <p className={styles.columnHeaderItemNarrowObject}>État</p>
                 </div>
                 <ul>
                 {trips.map(trip => (

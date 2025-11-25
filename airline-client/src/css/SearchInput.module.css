@@ -1,10 +1,9 @@
-
-
 /* main component object */
 .searchInputObject {
     margin: 0px;
-    padding: 10vh 0px;
+    padding: 2vh 0px 4vh 0px;
     background-color: white;
+    /* background-color: rgba(255, 255, 255, 0.75); */
 
     /* font properties */
     font-family: "Poppins", sans-serif;
@@ -22,7 +21,7 @@
 }
 
 .searchFormVerticalGroup {
-    padding: 0px 0px 0px 8px;
+    padding: 5px 0px 0px 8px;
     display: flex;
     flex-direction: column;
     border-right: 1px grey solid;
@@ -62,7 +61,7 @@
     font-size: 1.25rem;
 }
 
-.searchViewHeader { 
+.searchViewHeader {
     text-align: center;
     align-content: center;
 }
