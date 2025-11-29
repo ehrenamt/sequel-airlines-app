@@ -1,4 +1,4 @@
-/* styles.TripView.css */
+/* TripView.module.css */
 
 /* 
 Lint or layout rules:
@@ -26,60 +26,62 @@ ul {
 /* 3. Class selectors */
 
 .columnHeader {
+    /* layout properties */
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* border-top: 2px grey solid; */
-    border-bottom: 3px grey solid;
-    color: white;
-
     justify-content: space-between;
+
+    /* border properties */
+    border-bottom: 3px grey solid;
+
+    /* font properties */
+    color: white;
 }
 
 .columnHeaderItemLongObject, .columnHeaderItemStandardObject, .columnHeaderItemNarrowObject {
+    /* size, padding, and margin properties */
     margin: 5px 0px;
 
     /* font properties */
-    font-size: 1.35rem;
-    font-family: "Doto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-variation-settings: "ROND" 0;
-    text-align: start;
     color: white;
-    
     font-size: 1.5rem;
-      font-family: "Workbench", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "BLED" 0,
-    "SCAN" 0;
-
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "BLED" 0,
+        "SCAN" 0;
+    text-align: start;
 }
 
 .columnHeaderItemLongObject {
+    /* size, padding, and margin properties */
     min-width: 275px;
     padding: 2px 25px 2px 0px;
 }
 
 .columnHeaderItemStandardObject {
+    /* size, padding, and margin properties */
     min-width: 155px;
     padding: 2px 25px 2px 0px;
 }
 
 .columnHeaderItemNarrowObject {
+    /* size, padding, and margin properties */
     min-width: 125px;
     padding: 2px 25px 2px 0px;
 }
 
 .tableHeaderTitle {
+    /* size, padding, and margin properties */
     padding-top: 15px;
     padding-bottom: 15px;
     margin: 0;
 
+    /* TODO remove redundant */
+    /* font properties */
     font-size: 2rem;
     font-family: "Workbench", sans-serif;
     font-optical-sizing: auto;
@@ -180,6 +182,6 @@ ul {
     transparent 75%,
     rgba(78, 75, 66, 0.24)
   );
-  z-index: 1050; /* this should be above the grid overaly */
+  z-index: 1050; /* this should be above the grid overlay */
   pointer-events: none; /* Allow clicks to pass through the overlay */
 }

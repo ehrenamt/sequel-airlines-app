@@ -16,9 +16,12 @@ Exactly one newline between each selector.
 
 /* 1. Type selectors */
 
-a {
+a.hnavLiItemObject {
   font-style: none;
   color: white;
+  padding: 0px 10px;
+
+  font-size: 1rem;
 }
 
 /* 2. ID selectors */
@@ -44,14 +47,15 @@ a {
 
 .hnav {
   width: 100%;
-  padding: 15px 25px;
+  /* should use rem or other means of responsiveness */
+  padding: 15px 5vw;
 
   box-sizing: border-box;
   /* borders */
   border-bottom: 1px rgba(24, 24, 24);
   border-left: 1px rgba(24, 24, 24);
   border-right: 1px rgba(24, 24, 24);
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
 
   background-color: oklch(28.2% 0.091 267.935);
 }
@@ -69,8 +73,4 @@ a {
 
   /* font properties */
   font-size: 1.25rem;
-}
-
-.hnavLiItemObject {
-  padding: 0px 10px;
 }

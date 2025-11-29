@@ -1,4 +1,4 @@
-import styles from '../../css/SearchOutput.module.css'
+import styles from './css/SearchOutput.module.css'
 
 
 function SearchOutput() {

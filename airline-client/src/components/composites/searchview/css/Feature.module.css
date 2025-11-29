@@ -1,0 +1,11 @@
+.featureObject {
+    margin: 0;
+    padding: 0 12vw;
+    min-height: 20vh;
+
+    background-color: var(--theme-colour-primary-blue);
+
+    color: var(--theme-colour-secondary-white);
+
+    border-top: 4px var(--theme-colour-tertiary-grey) solid;
+}

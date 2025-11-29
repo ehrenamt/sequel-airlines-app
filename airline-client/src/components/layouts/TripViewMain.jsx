@@ -1,43 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../../css/TripView.module.css'
+import styles from './css/TripView.module.css'
 
 function TripViewMain() {
 
-    const apiUrlTripEndpoint = import.meta.env.GRAPHQL_API_URL_TRIP_ENDPOINT;
+    const apiUrlTripInfoEndpoint = import.meta.env.VITE_GRAPHQL_API_URL_TRIP_INFO_ENDPOINT;
 
     // Before the API request completes,
-    // there are a few miliseconds where the ayout renders without correct data.
+    // there are a few miliseconds where the layout renders without the correct data.
     // This hampers the user experience.
     // To fix this, we need to provide default data such that
     // the layout does not drastically change when displaying the correct data.
-    const defaultTrip = [
-        {
+    const defaultTrip = {
             flightNumber: 'NaN', originAirport: 'This is a test value', destinationAirport: 'Please ignore', aircraftModel: 'TESTMOD',
             departureTimeScheduled: '08:00', arrivalTimeScheduled: '10:00', status: 'TESTING',
-        },
-    ];
+        };
 
-    const defaultTrips = [];
+    // cleaner than a for-loop
+    const defaultTrips = Array(12).fill(defaultTrip);
 
-    for (let i = 0; i < 12; i++) {
-        defaultTrips.push(defaultTrip);
-    }
-
-    console.log(defaultTrips)
-    
-    const [trips, setTrips] = useState(defaultTrips);
+    const [trips, setTrips] = useState([]);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
     const fetchTrips = async () => {
         try {
-        const response = await fetch('http://127.0.0.1:8000/userapi/tripinformatio');
+            const response = await fetch(apiUrlTripInfoEndpoint);
+
         if (!response.ok) {
             throw new Error('Response returned not ok.');
         }
 
         const jsonData = await response.json();
+
+        // reset the trips.
+        // I have ZERO clue why using settrips with the new JSON data
+        // does not clear the test values from the array.
+        // It is so completely, entirely, wholly unintuitive.
+        // But that's how it is.
+        // setTrips([]);
+
+        // Do yourself a favour, and forgo this madness.
 
         setTrips(jsonData.getTripInformation);
 

@@ -1,4 +1,4 @@
-import styles from '../../css/SearchInput.module.css'
+import styles from './css/SearchInput.module.css'
 
 function SearchInput(onInputChange) {
     return (

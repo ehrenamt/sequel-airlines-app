@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import styles from '../../css/SearchViewMain.module.css';
-import Hnav from '../Hnav';
+import styles from './css/SearchViewMain.module.css';
+import Hnav from '../global/Hnav';
+import Feature from '../composites/searchview/Feature';
 import Footer from '../global/Footer';
-import SearchInput from './SearchInput';
-import SearchOutput from './SearchOutput';
+import SearchInput from '../composites/searchview/SearchInput';
+import SearchOutput from '../composites/searchview/SearchOutput';
 
 function SearchViewMain() {
 
@@ -36,6 +37,7 @@ function SearchViewMain() {
                 </div>
                 <SearchInput onInputChange={handleInputChange}></SearchInput>
                 <SearchOutput></SearchOutput>
+                <Feature></Feature>
                 <Footer></Footer>
             </div>
         </>

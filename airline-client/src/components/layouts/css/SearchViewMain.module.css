@@ -1,4 +1,4 @@
-/* SearchView.module.css */
+/* SearchViewMain.module.css */
 
 /* 
 Lint or layout rules:
@@ -26,12 +26,14 @@ h1 {
 /* 3. Class selectors */
 
 .searchViewObject {
-  border-top: 4px solid oklch(28.2% 0.091 267.935);
+    /* size, padding, and margin properties */
+	padding: 0;
+	margin: 0;
 
-  padding: 0;
-  margin: 0;
+	/* border properties */
+	border-top: 4px solid oklch(28.2% 0.091 267.935);
 }
 
 .searchViewHeaderGroup {
-  padding: 20vh 12vw 10vh 12vw;
+	padding: 20vh 12vw 10vh 12vw;
 }

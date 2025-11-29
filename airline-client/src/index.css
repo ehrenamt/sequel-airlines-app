@@ -17,16 +17,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* variables */
+  --theme-colour-primary-blue: oklch(28.2% 0.091 267.935);
+  --theme-colour-secondary-white: oklch(98.5% 0 0); /* tailwind zinc-50 */
+  --theme-colour-tertiary-grey: oklch(27.4% 0.006 286.033);
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
+  text-decoration: none;
 }
 
 body {
@@ -37,8 +36,6 @@ body {
   min-height: 100vh;
 
   background: linear-gradient(45deg, #D6E6F2, #C8ABE6, #6EB8E1);
-  /* background-size: 300% 300%; */
-  /* animation: gradientAnimation 5s ease infinite */
 
   background-image: url("assets/img/cs100bg.jpg");
   background-size: cover;
@@ -49,22 +46,6 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 
 @media (min-width: 1400px) {
   :root {

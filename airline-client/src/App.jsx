@@ -1,9 +1,8 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TripViewMain from './components/tripview/TripViewMain';
-import SearchViewMain from './components/searchview/SearchViewMain';
-import Guide from './components/staticpages/Guide';
+import TripViewMain from './components/layouts/TripViewMain';
+import SearchViewMain from './components/layouts/SearchViewMain';
+import Guide from './components/layouts/static/Guide';
 
 
 function App() {
