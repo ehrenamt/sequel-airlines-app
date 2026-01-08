@@ -28,19 +28,17 @@ function SearchViewMain() {
     };
 
     return (
-        <>
-            <div className={styles.searchViewObject}>
-                <Hnav></Hnav>
-                <div className={styles.searchViewHeaderGroup}>
-                    <h1>Flying to Europe or Asia for the holidays?</h1>
-                    <h2>With the largest fleet and flight network in the world, Sequel Airlines will take you there!</h2>
-                </div>
-                <SearchInput onInputChange={handleInputChange}></SearchInput>
-                <SearchOutput></SearchOutput>
-                <Feature></Feature>
-                <Footer></Footer>
+        <div className={styles.searchViewObject}>
+            <Hnav></Hnav>
+            <div className={styles.searchViewHeaderGroup}>
+                <h1>Flying to Europe or Asia for the holidays?</h1>
+                <h2>With the largest fleet and flight network in the world, Sequel Airlines will take you there!</h2>
             </div>
-        </>
+            <SearchInput onInputChange={handleInputChange}></SearchInput>
+            <SearchOutput></SearchOutput>
+            <Feature></Feature>
+            <Footer></Footer>
+        </div>
     )
 }
 

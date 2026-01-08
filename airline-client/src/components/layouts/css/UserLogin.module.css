@@ -1,0 +1,27 @@
+/* UserLogin.module.css */
+
+/* 
+Kindly adhere to the following linting or layout rules.
+
+Styles grouped in the following order
+  1. Type selectors
+  2. ID selectors
+  3. Class selector
+  4. Media selectors (if applicable)
+
+Selectors must be written in camelCase
+Selectors must be placed in alphabetical order within each group. 
+Exactly one newline between each selector.
+*/
+
+/* 1. Type selectors */
+
+/* 2. ID selectors */
+
+#userLoginObject {
+
+    margin: auto;
+    text-align: center;
+}
+
+/* 3. Class selectors */
