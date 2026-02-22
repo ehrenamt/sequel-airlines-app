@@ -23,7 +23,7 @@ schema = strawberry.Schema(query=schemas.Query)
 
 
 @app.route("/userapi/flights", methods=["GET"])
-@cross_origin()
+# @cross_origin()
 def get_flights_default():
     """
     Default route for flight search.
@@ -68,7 +68,6 @@ def get_flights_default():
 
 
 @app.route("/userapi/trips", methods=["GET"])
-# @cross_origin()
 def get_trips():
 
     query_string = '{ getTrips '
@@ -108,7 +107,6 @@ def get_trip_information():
 
 
 @app.route("/dbadmin/archivedtrips", methods=["GET"])
-@cross_origin()
 def get_archived_trips():
 
     query_string = '{ getArchivedTrips '
