@@ -4,8 +4,8 @@ This application uses a Flask API for simple querying, which it then translates 
 
 ## Build
 
-### Production Server
-To run the production server without Docker, activate the virtual environment.
+### Development Server
+To run the development server without Docker, activate the virtual environment.
 ```
 .venv/Scripts/Activate
 ```
