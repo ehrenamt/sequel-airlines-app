@@ -14,7 +14,10 @@
 
 # Overview
 
-![Image of the application frontend displaying an airport flight information display.](./other/image-of-display.png)
+![Image of the application frontend homepage, displaying a flight search interface and the results of a flight search.](./repository/image-of-homepage.png)
+
+
+![Image of the application frontend displaying an airport flight information display.](./repository/image-of-display.png)
 
 Airlines require complex algorithms and systems to manage their aircraft, their flights, and their trips. This projects aims to implement a full-stack solution with clear separation of concerns and user roles, while featuring a simple yet flexible query system and an automated yet performant database to handle trip scheduling, aircraft assignment, and trip updates.
 
