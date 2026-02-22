@@ -8,7 +8,7 @@ import UserLoginForm from "../atomics/UserLoginForm";
 
 function UserLogin() {
     return (
-        <div class={styles.userLoginObject}>
+        <div className={styles.userLoginObject}>
             <Hnav></Hnav>
             <UserLoginForm/>
         </div>

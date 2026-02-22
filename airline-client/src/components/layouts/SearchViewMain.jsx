@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FlightSearchContext } from '../../contexts/FlightSearchContext';
 import styles from './css/SearchViewMain.module.css';
 import Hnav from '../global/Hnav';
 import Feature from '../composites/searchview/Feature';
@@ -8,24 +9,8 @@ import SearchOutput from '../composites/searchview/SearchOutput';
 
 function SearchViewMain() {
 
-    const [formData, setFormData] = useState({
-        origin: '',
-        destination: '',
-        date: '',
-        passengers: 1
-    });
-
-    const [responseData, setResponseData] = useState(null);
-
-    const handleInputChange = (event) => {
-        const { key, value } = event.target;
-        setFormData((prevState) => ({
-            ...prevState,
-            [key]: value,
-        }));
-
-        console.log(formData)
-    };
+    const [flightSearchResponseData, setFlightSearchResponseData] = useState([]);
+    const [searchSubmitted, setSearchSubmitted] = useState(false);
 
     return (
         <div className={styles.searchViewObject}>
@@ -34,8 +19,14 @@ function SearchViewMain() {
                 <h1>Flying to Europe or Asia for the holidays?</h1>
                 <h2>With the largest fleet and flight network in the world, Sequel Airlines will take you there!</h2>
             </div>
-            <SearchInput onInputChange={handleInputChange}></SearchInput>
-            <SearchOutput></SearchOutput>
+            <SearchInput 
+                setSearchResponseData={setFlightSearchResponseData}
+                setSearchSubmitted={setSearchSubmitted}
+            />
+            <SearchOutput 
+                responseData={flightSearchResponseData}
+                searchSubmitted={searchSubmitted}
+            />
             <Feature></Feature>
             <Footer></Footer>
         </div>

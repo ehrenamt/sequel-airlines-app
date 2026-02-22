@@ -20,7 +20,8 @@
 
   /* variables */
   --theme-colour-primary-blue: oklch(28.2% 0.091 267.935);
-  --theme-colour-secondary-white: oklch(98.5% 0 0); /* tailwind zinc-50 */
+  --theme-colour-secondary-white: oklch(98.5% 0 0);
+  /* tailwind zinc-50 */
   --theme-colour-tertiary-grey: oklch(27.4% 0.006 286.033);
 }
 
@@ -36,8 +37,8 @@ body {
   min-height: 100vh;
 
   background: linear-gradient(45deg, #D6E6F2, #C8ABE6, #6EB8E1);
-
-  background-image: url("assets/img/cs100bg.jpg");
+  background: linear-gradient(132deg, rgb(251, 251, 255) 0.00%, rgb(215, 223, 252) 100.00%);
+  /* background-image: url("assets/img/cs100bg.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
 }

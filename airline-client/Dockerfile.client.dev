@@ -1,5 +1,5 @@
 # Dockerfile.client
-# For the production build of the frontend client
+# For the development and testing build of the frontend client
 
 FROM node:latest
 

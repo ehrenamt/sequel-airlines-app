@@ -1,0 +1,104 @@
+/* FlightCard.module.css */
+
+/* 
+Kindly adhere to the following linting or layout rules.
+
+Styles grouped in the following order
+  1. Type selectors
+  2. ID selectors
+  3. Class selector
+  4. Media selectors (if applicable)
+
+Selectors must be written in camelCase
+Selectors must be placed in alphabetical order within each group. 
+Exactly one newline between each selector.
+*/
+
+/* 1. Type selectors */
+
+p {
+  display: flex;
+  padding: 4px 4px;
+  font-size: 1rem;
+  margin: 0;
+  align-items: center;
+}
+
+/* 2. ID selectors */
+
+/* 3. Class selectors */
+
+.aircraftTypeInfoString {
+
+  /* Note that one cannot simply define the grid-column-end. */
+  /* You must specify both to span the columns in between the two. */
+  grid-column-start: 7;
+  grid-column-end: 13;
+}
+
+.flightCardObject {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+}
+
+.flightCardVerticalContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.flightCardHorizontalContainer,
+.flightCardHorizontalContainer>* {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.acTypeBackground {
+  background-image: url(../../../assets/img/787_profile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100px;
+  grid-column: span 4;
+
+  text-align: center;
+  background-position: center;
+}
+
+
+.lineGraphic {
+  font-weight: bold;
+  grid-column: span 2;
+}
+
+.stopInformationString {
+  grid-column: span 3;
+
+  justify-content: center;
+}
+
+.flightNumberString {
+  font-weight: bold;
+  grid-column: span 4;
+}
+
+.aptIcaoString {
+  font-weight: bold;
+  grid-column: span 3;
+  justify-content: center;
+}
+
+.aptFullString {
+  grid-column: span 4;
+
+}
+
+.gridSpan2 {
+  grid-column: span 2;
+}
+
+.REM2 {
+  font-size: 1.5rem;
+}
