@@ -31,13 +31,13 @@ CREATE TYPE core.manufacturer_type AS ENUM (
 CREATE TYPE core.aircraft_model_type AS ENUM (
     'A220-100',
     'A220-300',
-    'A319NEO',
+    'A319 NEO',
     'A350-1000',
     'B787-9',
     'Dash 8 Q400',
     'E175',
     'E195',
-    '208B GRAND CARAVAN'
+    '208B GR. CARAVAN'
 );
 
 
@@ -95,6 +95,8 @@ CREATE TABLE core.aircraft (
     destination_icao_last CHAR(4) NOT NULL,
     destination_icao_next CHAR(4),
     status core.aircraft_status_type NOT NULL,
+    total_cycles INTEGER NOT NULL,
+    cycles_since_maintenance INTEGER NOT NULL,
     FOREIGN KEY (configuration_name) REFERENCES core.seating_configurations(configuration_name),
     FOREIGN KEY (destination_icao_last) REFERENCES core.airports(icao),
     FOREIGN KEY (destination_icao_next) REFERENCES core.airports(icao),
@@ -149,6 +151,10 @@ CREATE TABLE core.past_trips (LIKE core.trips INCLUDING ALL);
 --------------------------------------------------------------------------------
 -- Indices
 --------------------------------------------------------------------------------
+-- The default INDEX in PostgreSQL 16 is a B-tree.
+-- We may want to change this, if we find most of our queries on these tables
+-- are equality / membership, and not ranges.
+--------------------------------------------------------------------------------
 
 
 -- For interfaces that search by flight number (end users)
@@ -190,3 +196,23 @@ JOIN core.airports origin_airport ON f.origin_icao = origin_airport.icao
 JOIN core.airports destination_airport ON f.destination_icao = destination_airport.icao
 ORDER BY f.departure_time_scheduled ASC;
 
+-- Storing statistics on database data.
+-- Temporary config. Move to a different schema later
+CREATE TABLE core.aircraft_counts (
+    aircraft_model core.aircraft_model_type,
+    count INTEGER DEFAULT 0
+);
+
+--------------------------------------------------------------------------------
+-- User Schemas
+--------------------------------------------------------------------------------
+
+CREATE TABLE core.user_accounts (
+    unique_id SERIAL PRIMARY KEY,
+    public_id TEXT NOT NULL,
+    email TEXT NOT NULL,
+    username TEXT NOT NULL,
+    hashed_pwd TEXT NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    active BOOLEAN NOT NULL
+);

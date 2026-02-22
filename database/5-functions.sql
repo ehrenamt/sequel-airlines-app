@@ -96,7 +96,9 @@ CREATE OR REPLACE FUNCTION core.update_aircraft_statuses()
 RETURNS void AS $$
 BEGIN
     UPDATE core.aircraft a
-    SET status = 'FREE'
+    SET (status, total_cycles, cycles_since_maintenance)
+    = ('FREE', total_cycles + 1, cycles_since_maintenance + 1)
+    -- SET status = 'FREE'
     FROM (
         SELECT DISTINCT ON (t.aircraft)
             aircraft,
