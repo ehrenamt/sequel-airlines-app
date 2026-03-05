@@ -1,13 +1,14 @@
 Custom components are included in this directory.
 They are broadly classified and organized according to these rules.
 
-Atomics     -   Components which are functionally and visually simple 
-                and do not contain any other components.
+Atomics     -   Components which are functionally and visually simple, do
+                not directly query external sources, and do not contain any 
+                other components.
 
 Composites  -   Components which contain other components,
                 but are themselves included within other components
                 and do not complete an entire page. These are further
-                subdivided into 
+                grouped into their respective use cases.
 
 Global      -   Components which are shared across multiple layouts.
                 These are generally static and can likely be rendered

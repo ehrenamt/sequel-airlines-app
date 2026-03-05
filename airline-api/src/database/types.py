@@ -21,11 +21,24 @@ class FlightType:
     """GraphQL type for the flights from the core.flights table."""
     flightNumber: str
     originIcao: str
+    originAirportName: str
     destinationIcao: str
-    departureTimeScheduled: time
-    arrivalTimeScheduled: time
-    typesAllowed: List[str]
-    dateDows: List[str]
+    destinationAirportName: str
+    departureTimeScheduled: str
+    arrivalTimeScheduled: str
+    # typesAllowed: List[str]
+    # dateDows: List[str]
+
+
+@strawberry.type
+class FlightDetailsType:
+    flightNumber: str
+    originIcao: str
+    originAirportName: str
+    destinationIcao: str
+    destinationAirportName: str
+    departureTimeScheduled: str
+    arrivalTimeScheduled: str
 
 
 @strawberry.type

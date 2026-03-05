@@ -1,3 +1,11 @@
+/* SearchInput.jsx */
+
+/*
+Component for receiving flight search input and quering the API.
+*/
+
+import { constructSearchRequestString } from '../../../utils/searchUtils';
+
 import styles from './css/SearchInput.module.css'
 
 function SearchInput({setSearchResponseData, setSearchSubmitted}) {
@@ -10,40 +18,24 @@ function SearchInput({setSearchResponseData, setSearchSubmitted}) {
         event.preventDefault();
         const apiUrlFlightInfoBaseEndpoint = import.meta.env.VITE_GRAPHQL_API_URL_FLIGHT_INFO_BASE_ENDPOINT;
 
-
         const formData = {
-            origin: document.getElementById('search-input-origin-airport').value,
+            date: document.getElementById('search-input-date').value,
             destination: document.getElementById('search-input-destination-airport').value,
-            date: document.getElementById('search-input-date').value
+            origin: document.getElementById('search-input-origin-airport').value
         };
 
-        const keys = Object.keys(formData);
+        console.debug(JSON.stringify(formData));
 
-        // const enteredQueryParams = false;
+        const searchURLString = constructSearchRequestString(apiUrlFlightInfoBaseEndpoint, formData);
 
-        for (let k in keys) {
-            if (formData[k] === "") {
-                delete formData[k]
-            }
-        }
-
-        const enteredQueryParams = Object.keys(formData).length == 0 ? false : true;
-
-        // for logging
-        console.log(JSON.stringify(formData));
-
-        const queryParamList = [];
-
-        console.log(`FLight origin value: ${typeof document.getElementById('search-input-origin-airport').value}`);
-        console.log(`FLight dest value: ${typeof document.getElementById('search-input-destination-airport').value}`);
-        console.log(`FLight date input value: ${typeof document.getElementById('search-input-date').value}`);
-
+        console.debug(`Search URL constructed: ${searchURLString}`)
 
         let jsonData = {};
 
         try {
 
-            const response = await fetch(apiUrlFlightInfoBaseEndpoint);
+            // const response = await fetch(apiUrlFlightInfoBaseEndpoint);
+            const response = await fetch(searchURLString);
 
             if (!response.ok) {
                 throw new Error('Response returned not ok.');
@@ -70,13 +62,10 @@ function SearchInput({setSearchResponseData, setSearchSubmitted}) {
         } finally {
             setSearchSubmitted(true);
 
-            // Interesting how JS supports first-class functions,
-            // perfectly suited for functional programming
-            // and yet this feels so inelegant.
+            // Somehow this feels so inelegant.
             setSearchResponseData(jsonData.getFlights);
         }
     }
-
 
     return (
         <div className={styles.searchInputObject}>

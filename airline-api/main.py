@@ -32,11 +32,13 @@ def get_flights_default():
 
     flight_number = request.args.get('flight_number')
     origin = request.args.get('origin')
+    destination = request.args.get('destination')
+
 
     query_string = '{ getFlights'
-    query_string_end = ' { flightNumber originIcao destinationIcao }}'
+    query_string_end = ' { flightNumber originIcao destinationIcao originAirportName destinationAirportName departureTimeScheduled arrivalTimeScheduled }}'
 
-    filters = {"flightNumber": flight_number, "originIcao": origin}
+    filters = {"flightNumber": flight_number, "originIcao": origin, "destinationIcao": destination}
     any_filters = False
 
     filter_query_string = ""

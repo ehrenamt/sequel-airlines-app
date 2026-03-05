@@ -14,11 +14,13 @@ COPY 2-schema.sql /docker-entrypoint-initdb.d/
 
 COPY 3-permissions.sql /docker-entrypoint-initdb.d/
 
-COPY 4-load.sql /docker-entrypoint-initdb.d/
+COPY 4-load-static.sql /docker-entrypoint-initdb.d/
 
-COPY 5-functions.sql /docker-entrypoint-initdb.d/
+COPY 5-load-dynamic.sql /docker-entrypoint-initdb.d/
 
-COPY 6-cron_schedules.sql /docker-entrypoint-initdb.d/
+COPY 6-functions.sql /docker-entrypoint-initdb.d/
+
+COPY 7-cron_schedules.sql /docker-entrypoint-initdb.d/
 
 COPY drop.sql /utils/
 

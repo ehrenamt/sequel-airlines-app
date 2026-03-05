@@ -11,7 +11,8 @@ function FlightCard({flightNumberString, originIcaoString, originAirportString, 
                 <p className={`${styles.stopInformationString}`}>0 stops</p>
                 
                 <p className={styles.aptFullString}>{destinationAirportString}</p>
-                <p className={styles.acTypeBackground}></p>
+                {/* <p className={styles.acTypeBackground}></p> */}
+                <img src='../../assets/img/878_profile.png'></img>
                 <p className={styles.aircraftTypeInfoString}>The aircraft for this flight is a {acTypeString} or a similar aircraft.</p>
         </div>
     )

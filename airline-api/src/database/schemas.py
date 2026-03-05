@@ -2,6 +2,7 @@
 schemas.py
 
 Defines the strawberry query type and fields to resolve GraphQL queries.
+Defines resolvers for GraphQl queries.
 """
 
 # pylint: skip-file
@@ -30,7 +31,7 @@ class Query:
     @strawberry.field
     def get_flights(self, flight_number: Optional[str] = None,
         origin_icao: Optional[str] = None,
-        destination: Optional[str] = None
+        destination_icao: Optional[str] = None
         ) -> List[FlightType]:
         """
         Selects all flights matching the specified criteria 
@@ -39,7 +40,7 @@ class Query:
 
 
         with Session() as session:
-            query = "SELECT * FROM core.flights"
+            query = "SELECT * FROM core.view_flight_details"
             filters = []
 
             if flight_number:
@@ -48,8 +49,8 @@ class Query:
             if origin_icao:
                 filters.append(f"origin_icao ILIKE :origin_icao")
 
-            if destination:
-                filters.append(f"destination_icao ILIKE :destination")
+            if destination_icao:
+                filters.append(f"destination_icao ILIKE :destination_icao")
 
             if filters:
                 query += " WHERE " + " AND ".join(filters)
@@ -61,8 +62,8 @@ class Query:
                 params["flight_number"] = f"%{flight_number}%"
             if origin_icao:
                 params["origin_icao"] = f"%{origin_icao}%"
-            if destination:
-                params["destination"] = f"%{destination}%"
+            if destination_icao:
+                params["destination_icao"] = f"%{destination_icao}%"
 
             result = session.execute(query_statement, params)
 
@@ -71,11 +72,11 @@ class Query:
             return [FlightType(
                 flightNumber=flight.flight_number,
                 originIcao=flight.origin_icao,
+                originAirportName=flight.origin_airport_name,
                 destinationIcao=flight.destination_icao,
-                departureTimeScheduled=flight.departure_time_scheduled,
-                arrivalTimeScheduled=flight.arrival_time_scheduled,
-                typesAllowed=flight.types_allowed,
-                dateDows=flight.date_dows
+                destinationAirportName=flight.destination_airport_name,
+                departureTimeScheduled=flight.departure_time_scheduled.strftime("%H:%M"),
+                arrivalTimeScheduled=flight.arrival_time_scheduled.strftime("%H:%M"),
                 ) for flight in fetched_flights]
 
 

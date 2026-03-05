@@ -176,6 +176,23 @@ CREATE INDEX idx_trip_flight_date ON core.trips(flight_number, trip_date);
 -- No need to make triggers here.
 --------------------------------------------------------------------------------
 
+-- for the main flight search feature
+-- aggregating as a view here reduced modifications to the API code
+CREATE VIEW core.view_flight_details AS
+SELECT 
+f.flight_number AS flight_number,
+f.origin_icao AS origin_icao,
+origin_airport.full_airport_name AS origin_airport_name,
+f.destination_icao AS destination_icao,
+destination_airport.full_airport_name AS destination_airport_name,
+f.departure_time_scheduled AS departure_time_scheduled,
+f.arrival_time_scheduled AS arrival_time_scheduled
+FROM core.flights f 
+JOIN core.airports origin_airport ON f.origin_icao = origin_airport.icao
+JOIN core.airports destination_airport ON f.destination_icao = destination_airport.icao
+ORDER BY random();
+
+
 -- For viewing recent current, and upcoming trips
 -- i.e. for airport information screens
 CREATE VIEW api_schema.view_trip_details AS

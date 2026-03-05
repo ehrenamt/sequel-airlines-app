@@ -1,16 +1,25 @@
-import { useState } from 'react';
-import { FlightSearchContext } from '../../contexts/FlightSearchContext';
+/* SearchViewMain.jsx */
+
+/*
+Homepage of the web application.
+Provides search functionality to users via SearchInput and Searchoutput 
+components.
+*/
+
+import { lazy, useState } from 'react';
 import styles from './css/SearchViewMain.module.css';
 import Hnav from '../global/Hnav';
 import Feature from '../composites/searchview/Feature';
 import Footer from '../global/Footer';
 import SearchInput from '../composites/searchview/SearchInput';
-import SearchOutput from '../composites/searchview/SearchOutput';
+
+const SearchOutput = lazy(() => import('../composites/searchview/SearchOutput'));
 
 function SearchViewMain() {
 
     const [flightSearchResponseData, setFlightSearchResponseData] = useState([]);
     const [searchSubmitted, setSearchSubmitted] = useState(false);
+    // TODO: Add a use useDeferredValue(searchrespone...);
 
     return (
         <div className={styles.searchViewObject}>
