@@ -28,34 +28,6 @@ p {
 
 /* 3. Class selectors */
 
-.aircraftTypeInfoString {
-
-  /* Note that one cannot simply define the grid-column-end. */
-  /* You must specify both to span the columns in between the two. */
-  grid-column-start: 7;
-  grid-column-end: 13;
-}
-
-.flightCardObject {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 5px;
-}
-
-.flightCardVerticalContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.flightCardHorizontalContainer,
-.flightCardHorizontalContainer>* {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-
 .acTypeBackground {
   background-image: url(../../../assets/img/787_profile.png);
   background-repeat: no-repeat;
@@ -67,6 +39,49 @@ p {
   background-position: center;
 }
 
+.aircraftTypeInfoString {
+
+  grid-column: span 6;
+}
+
+.flightCardObject {
+
+  /* Since we're using a grid, */
+  /* note that one cannot simply define the grid-column-end. */
+  /* You must specify both to span the columns in between the two. */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.flightCardHorizontalContainer,
+.flightCardHorizontalContainer>* {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.flightCardVerticalContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceDisplay {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.25rem;
+  grid-column: span 2;
+  grid-row: span 3;
+
+  border-left: 2px solid grey;
+
+  justify-content: center;
+  align-items: center;
+
+}
 
 .lineGraphic {
   font-weight: bold;
@@ -74,7 +89,7 @@ p {
 }
 
 .stopInformationString {
-  grid-column: span 3;
+  grid-column: 5 / span 2;
 
   justify-content: center;
 }
@@ -86,7 +101,7 @@ p {
 
 .aptIcaoString {
   font-weight: bold;
-  grid-column: span 3;
+  grid-column: span 2;
   justify-content: center;
 }
 

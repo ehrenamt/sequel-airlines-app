@@ -1,0 +1,68 @@
+/* FeatureGroup.module.css */
+
+/* 
+Kindly adhere to the following linting or layout rules.
+
+Styles grouped in the following order
+  1. Type selectors
+  2. ID selectors
+  3. Class selector
+  4. Media selectors (if applicable)
+
+Selectors must be written in camelCase
+Selectors must be placed in alphabetical order within each group. 
+Exactly one newline between each selector.
+*/
+
+/* 1. Type selectors */
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* 2. ID selectors */
+
+/* 3. Class selectors */
+
+.featureObject {
+    margin: 0;
+    padding: 4vh 12vw;
+    min-height: 20vh;
+
+    background-color: var(--theme-colour-primary-blue);
+
+    color: var(--theme-colour-secondary-white);
+
+    border-top: 2px white solid;
+}
+
+.featureCardContainer {
+
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+}
+
+.featureCardContainer48Left {
+    grid-column: span 4;
+}
+
+.featureCardContainer84Left {
+    grid-column: span 7;
+}
+
+.featureCardContainer48Right {
+    grid-column: 6 / span 7;
+}
+
+.featureCardContainer84Right {
+    grid-column: 9 / span 4;
+}

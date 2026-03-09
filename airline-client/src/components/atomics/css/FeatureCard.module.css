@@ -1,0 +1,45 @@
+/* FeatureCard.module.css */
+
+/* 
+Kindly adhere to the following linting or layout rules.
+
+Styles grouped in the following order
+  1. Type selectors
+  2. ID selectors
+  3. Class selector
+  4. Media selectors (if applicable)
+
+Selectors must be written in camelCase
+Selectors must be placed in alphabetical order within each group. 
+Exactly one newline between each selector.
+*/
+
+/* 1. Type selectors */
+
+/* 2. ID selectors */
+
+/* 3. Class selectors */
+
+.featureCardDescription {
+  height: 100%;
+  align-content: center;
+  box-sizing: border-box;
+
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.featureCardObject {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.featureCardTitle {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}

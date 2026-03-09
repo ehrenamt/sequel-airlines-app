@@ -23,6 +23,8 @@
   --theme-colour-secondary-white: oklch(98.5% 0 0);
   /* tailwind zinc-50 */
   --theme-colour-tertiary-grey: oklch(27.4% 0.006 286.033);
+
+  --body-padding: 20px;
 }
 
 a {
@@ -51,5 +53,7 @@ h1 {
 @media (min-width: 1400px) {
   :root {
     font-size: 16px;
+
+    --body-padding: 12vw;
   }
 }

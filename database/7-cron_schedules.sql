@@ -1,7 +1,7 @@
--- 6-cron_schedules.sql
+-- cron_schedules.sql
 --------------------------------------------------------------------------------
--- Executes after 5-functions.sql
--- Creates pg_cron and schedules the functions defined in  5-functions.sql
+-- Executes after 6-functions.sql
+-- Creates pg_cron and schedules the functions defined in 6-functions.sql
 --------------------------------------------------------------------------------
 
 \c flightsdb
@@ -42,7 +42,7 @@ SELECT cron.schedule(
 -- Should be 3 - 4 times a day
 -- Currently high rate for testing
 SELECT cron.schedule(
-  'randomly_delay_trip_each_1min',
-  '*/5 * * * *',
+  'randomly_delay_trip_each_15min',
+  '*/15 * * * *',
   $$ SELECT core.simulate_random_delay_or_cancel(); $$
 );

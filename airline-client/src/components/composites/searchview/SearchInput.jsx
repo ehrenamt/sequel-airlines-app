@@ -4,7 +4,7 @@
 Component for receiving flight search input and quering the API.
 */
 
-import { constructSearchRequestString } from '../../../utils/searchUtils';
+import { constructSearchRequestString } from '@/utils/searchUtils';
 
 import styles from './css/SearchInput.module.css'
 
@@ -12,7 +12,7 @@ function SearchInput({setSearchResponseData, setSearchSubmitted}) {
 
     const submitFunction = async (event) => {
 
-        // a bit clunky, and not vey scalable.
+        // a bit clunky, and not very scalable.
         // Before adding new features, I should refactor this
 
         event.preventDefault();
@@ -51,12 +51,33 @@ function SearchInput({setSearchResponseData, setSearchSubmitted}) {
         } catch (error) {
             console.error(error);
             jsonData = {
+
+
+                // leaving this in the code for quick debugging and UI testing
+                // without access to the database
                 getFlights:
-                    [{
-                        flightNumber: "FakeFlight1234",
-                        originIcao: "YYZ",
-                        destinationIcao: "EWR",
-                    }]
+                    [
+                        {
+                        flightNumber: "TESTFLIGHT 1234",
+                        originIcao: "CYYZ",
+                        originAirportName: "Toronto Pearson International Airport",
+                        destinationIcao: "KEWR",
+                        destinationAirportName: "Newark Libery Airport",
+                        acTypeString: "Boeing 787-9",
+                        departureTimeString: "07:00",
+                        arrivalTimeString: "08:00"
+                        },
+                        {
+                        flightNumber: "TESTFLIGHT 5678",
+                        originIcao: "CYYZ",
+                        originAirportName: "Toronto Pearson International Airport",
+                        destinationIcao: "KEWR",
+                        destinationAirportName: "Newark Libery Airport",
+                        acTypeString: "Boeing 787-9",
+                        departureTimeString: "08:00",
+                        arrivalTimeString: "09:00"
+                        },
+                    ]
                 }
 
         } finally {
@@ -77,11 +98,13 @@ function SearchInput({setSearchResponseData, setSearchSubmitted}) {
                         <p className={styles.inputLabel}>From</p>
                         <input 
                             className={styles.inputTag} type="text" id="search-input-origin-airport" name="search-input-origin-airport"
+                            placeholder="Country, city, or airport"
                         />
                     </div>
                     <div className={styles.searchFormVerticalGroup}>
                         <p className={styles.inputLabel}>To</p>
-                        <input className={styles.inputTag} type="text" id="search-input-destination-airport" name="search-input-destination-airport" 
+                        <input className={styles.inputTag} type="text" id="search-input-destination-airport" name="search-input-destination-airport"
+                        placeholder="Country, city, or airport"
                         />
                     </div>
                     <div className={styles.searchFormVerticalGroup}>
@@ -94,7 +117,7 @@ function SearchInput({setSearchResponseData, setSearchSubmitted}) {
                         <input className={styles.inputTag} type="number" min="1" required
                         />
                     </div>
-                    <input className={styles.submitButton} type="submit" value="Submit" />
+                    <input className={styles.submitButton} type="submit" value="Find Flights" />
                 </form>
                 
             </div>

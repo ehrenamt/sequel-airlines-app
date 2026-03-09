@@ -108,6 +108,9 @@ def get_trip_information():
     return response, 200
 
 
+# admin routes
+
+
 @app.route("/dbadmin/archivedtrips", methods=["GET"])
 def get_archived_trips():
 
@@ -115,26 +118,6 @@ def get_archived_trips():
     query_string += '{'
     query_string += 'flightNumber departureTimeScheduled '
     query_string += 'arrivalTimeScheduled aircraft tripStatus'
-    query_string += '}'
-    query_string += '}'
-
-    result = schema.execute_sync(query_string)
-
-    response = make_response(jsonify(result.data))
-
-    response.headers.add('Access-Control-Allow-Origin', '*')
-
-    return response, 200
-
-
-@app.route("/dbadmin/aircraft", methods=["GET"])
-@cross_origin()
-def get_aircraft():
-
-    query_string = '{ getAircraft '
-    query_string += '{'
-    query_string += 'registration manufacturer '
-    query_string += 'model status'
     query_string += '}'
     query_string += '}'
 

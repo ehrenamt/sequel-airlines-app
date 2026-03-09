@@ -44,7 +44,7 @@
 
     /* custom styling */
     min-height: 35px;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     background-color: white;
     outline: none;
     border-radius: 5px;
@@ -58,7 +58,7 @@
     border: 1px grey solid;
     border-radius: 50px;
 
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 .searchViewHeader {
@@ -81,5 +81,5 @@
     padding: 0px 0px 0px 15px;
 
     /* font properties */
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }

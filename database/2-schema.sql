@@ -183,8 +183,12 @@ SELECT
 f.flight_number AS flight_number,
 f.origin_icao AS origin_icao,
 origin_airport.full_airport_name AS origin_airport_name,
+origin_airport.city AS origin_city,
+origin_airport.country AS origin_country,
 f.destination_icao AS destination_icao,
 destination_airport.full_airport_name AS destination_airport_name,
+destination_airport.city AS destination_city,
+destination_airport.country AS destination_country,
 f.departure_time_scheduled AS departure_time_scheduled,
 f.arrival_time_scheduled AS arrival_time_scheduled
 FROM core.flights f 

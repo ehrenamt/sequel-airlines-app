@@ -7,10 +7,12 @@ function Hnav() {
                 <div class={styles.hnavWrapper}>
                     <nav class={styles.hnav}>
                         <li class={styles.hnavLiObject}>
+                            <div class={styles.imgObject}></div>
                             <Link to="/" class={styles.hnavLiItemObject}>Home</Link>
                             <Link to="/about" class={styles.hnavLiItemObject}>About</Link>
                             <Link to="/tripinformation" class={styles.hnavLiItemObject}>Live Trips</Link>
                             <Link to="/signin" class={styles.hnavLiItemObject}>Sign In</Link>
+
                             {/* <Link to="/projectdocs" class={styles.hnavLiItemObject}>Guide</Link> */}
                         </li>
                     </nav>

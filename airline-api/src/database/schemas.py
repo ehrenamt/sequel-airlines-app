@@ -47,10 +47,10 @@ class Query:
                 filters.append(f"flight_number ILIKE :flight_number")
 
             if origin_icao:
-                filters.append(f"origin_icao ILIKE :origin_icao")
+                filters.append(f"(origin_icao ILIKE :origin_icao OR origin_city ILIKE :origin_icao OR origin_country ILIKE :origin_icao)")
 
             if destination_icao:
-                filters.append(f"destination_icao ILIKE :destination_icao")
+                filters.append(f"(destination_icao ILIKE :destination_icao OR destination_city ILIKE :destination_icao OR destination_country ILIKE :destination_icao)")
 
             if filters:
                 query += " WHERE " + " AND ".join(filters)

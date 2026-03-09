@@ -1,4 +1,8 @@
--- 5-functions.sql
+-- functions.sql
+--------------------------------------------------------------------------------
+-- This file contains function definitions that will be used in both standard
+-- queries as well as scheduled jobs. This allows us to keep database query 
+-- logic within Postgres, and reduces the need of writing SQL in the API code.
 --------------------------------------------------------------------------------
 
 \c flightsdb

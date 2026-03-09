@@ -9,9 +9,10 @@ components.
 import { lazy, useState } from 'react';
 import styles from './css/SearchViewMain.module.css';
 import Hnav from '../global/Hnav';
-import Feature from '../composites/searchview/Feature';
+import FeatureGroup from '../composites/searchview/FeatureGroup';
 import Footer from '../global/Footer';
 import SearchInput from '../composites/searchview/SearchInput';
+import featureGridSplits from '@/utils/enums';
 
 const SearchOutput = lazy(() => import('../composites/searchview/SearchOutput'));
 
@@ -26,7 +27,7 @@ function SearchViewMain() {
             <Hnav></Hnav>
             <div className={styles.searchViewHeaderGroup}>
                 <h1>Flying to Europe or Asia for the holidays?</h1>
-                <h2>With the largest fleet and flight network in the world, Sequel Airlines will take you there!</h2>
+                <h2>With the largest fleet and flight network in the world, Air Trillium will take you there!</h2>
             </div>
             <SearchInput 
                 setSearchResponseData={setFlightSearchResponseData}
@@ -36,7 +37,13 @@ function SearchViewMain() {
                 responseData={flightSearchResponseData}
                 searchSubmitted={searchSubmitted}
             />
-            <Feature></Feature>
+            <FeatureGroup
+                splitLayout={featureGridSplits.A1}
+                title="Partners and Offers"
+            />
+            <FeatureGroup 
+                splitLayout={featureGridSplits.A2}
+            />
             <Footer></Footer>
         </div>
     )

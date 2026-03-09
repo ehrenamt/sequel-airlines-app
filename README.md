@@ -38,3 +38,8 @@ Each of the three services are dockerized and are built together with ```docker 
 # Sample Usage
 
 This is a work-in-progress and I will update this once completed.
+
+# Repository
+
+As this is a monorepo, there are a few files and directories that are specific
+to each service, and the purpose of these may not be entirely obvious. Each README for each of the API, client, and database services should contain a section that explains these directories and files, if needed.

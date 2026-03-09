@@ -1,3 +1,7 @@
-.center-text-horizontally {
+.justifyCenter {
     justify-content: center;
+}
+
+.justifyEnd {
+    justify-content: end;
 }

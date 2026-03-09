@@ -19,9 +19,7 @@ Exactly one newline between each selector.
 a.hnavLiItemObject {
   font-style: none;
   color: white;
-  padding: 0px 10px;
-
-  font-size: 1rem;
+  padding: 30px 10px;
 }
 
 /* 2. ID selectors */
@@ -39,25 +37,26 @@ a.hnavLiItemObject {
 
   /* additional colour properties */
   color: white;
+
 }
 
 .hnavWrapper {
-  padding: 0px 12vw;
+  padding: 0px var(--body-padding);
 }
 
 .hnav {
   width: 100%;
   /* should use rem or other means of responsiveness */
-  padding: 15px 5vw;
+  padding: 0px 4vw 0px 2vw;
 
   box-sizing: border-box;
   /* borders */
-  border-bottom: 1px rgba(24, 24, 24);
-  border-left: 1px rgba(24, 24, 24);
-  border-right: 1px rgba(24, 24, 24);
-  border-radius: 0px 0px 5px 5px;
+  border-bottom: 1px solid white;
+  /* border-left: 1px solid white; */
+  /* border-right: 1px solid white; */
+  border-radius: 0px 0px 2px 2px;
 
-  background-color: oklch(28.2% 0.091 267.935);
+  background-color: var(--theme-colour-primary-blue);
 }
 
 .hnavLiObject {
@@ -71,6 +70,14 @@ a.hnavLiItemObject {
   flex-direction: row;
   justify-content: space-between;
 
-  /* font properties */
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+}
+
+
+.imgObject {
+  min-width: 256px;
+  /* min-height: 64px; */
+  background-image: url(./../../../assets/img/air-trilium-banner-blue.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
