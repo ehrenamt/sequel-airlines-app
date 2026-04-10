@@ -43,6 +43,9 @@ body {
   /* background-image: url("assets/img/cs100bg.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
+
+  border-top: 4px solid oklch(28.2% 0.091 267.935);
+
 }
 
 h1 {

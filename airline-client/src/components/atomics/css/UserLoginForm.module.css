@@ -21,13 +21,54 @@ Exactly one newline between each selector.
 /* 3. Class selectors */
 
 .userLoginFormObject {
+    border-top: 4px solid oklch(28.2% 0.091 267.935);
+    /* border-bottom: 4px solid oklch(28.2% 0.091 267.935); */
+
+
+    height: max-content;
+    width: 350px;
+
     display: flex;
     flex-direction: column;
-    margin: auto;
-    text-align: center;
-    align-items: center;
+    align-content: space-around;
+
+    margin: 0 auto;
+    margin-top: 200px;
+
+    /* border: 2px solid var(--theme-colour-primary-blue); */
+
+    background-color: white;
+    /* border-radius: 5px; */
+    padding: 25px;
 }
 
 .userLoginFormObject>* {
-    font-size: 2rem;
+    font-size: 1.25rem;
+    margin: 5px 0;
+}
+
+.textInput {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.signInButton {
+    width: 100%;
+    background: none;
+    color: white;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    justify-content: center;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background-color: var(--theme-colour-primary-blue);
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+
 }

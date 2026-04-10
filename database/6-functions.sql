@@ -7,9 +7,9 @@
 
 \c flightsdb
 
--- --------------------------------------------------------------------------------
--- -- Functions
--- --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Functions
+--------------------------------------------------------------------------------
 
 
 -- Adds upcoming trips to to the trip table based on dates in flight table.
@@ -135,5 +135,20 @@ BEGIN
 
     RAISE NOTICE 'FLIGHT DELAYED! %', selected_trip.flight_number;
 
+END;
+$$ LANGUAGE plpgsql;
+
+
+--------------------------------------------------------------------------------
+-- Trigger Functions
+--------------------------------------------------------------------------------
+-- The functions defined below are run when trigger by a write or an update to
+-- a table. They are not executed according to a schedule.
+--------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION core.triggered_update_available_seats()
+RETURNS available_seats AS $$
+BEGIN
+    RETURN 100;
 END;
 $$ LANGUAGE plpgsql;

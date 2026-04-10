@@ -143,6 +143,19 @@ VALUES (
 -- temp timezone
 INSERT INTO core.airports (icao, iata, full_airport_name, airport_display_name, country, city, timezone)
 VALUES (
+    'ENGM',
+    'OSL',
+    'Oslo Gardermoen Airport',
+    'Oslo',
+    'Norway',
+    'Oslo',
+    'America/New_York'
+);
+
+
+-- temp timezone
+INSERT INTO core.airports (icao, iata, full_airport_name, airport_display_name, country, city, timezone)
+VALUES (
     'LTFJ',
     'SAW',
     'Sabiha Gökçen International Airport',
@@ -312,3 +325,8 @@ VALUES
 ('C-CXND', 'CESSNA','208B GR. CARAVAN'::core.aircraft_model_type, 'CYUL', 'FREE', 0, 0),
 ('C-CXNE', 'CESSNA','208B GR. CARAVAN'::core.aircraft_model_type, 'CYUL', 'FREE', 0, 0),
 ('C-D2A4', 'EMBRAER','E175'::core.aircraft_model_type, 'CYUL', 'FREE', 0, 0);
+
+-- user accounts
+
+INSERT INTO core.user_accounts (public_id, email, username, hashed_pwd, first_name, last_name, active) VALUES
+('PID000', 'defaultuser1@gmail.com', 'jsmith1', 'abcdefg', 'John', 'Smith', TRUE);

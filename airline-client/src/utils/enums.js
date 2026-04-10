@@ -1,5 +1,5 @@
 const featureGridSplits = Object.freeze({
-    A1: '84',
+    A1: "84",
     A2: '48'
 });
 

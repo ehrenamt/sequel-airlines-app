@@ -72,15 +72,39 @@ p {
   display: flex;
   flex-direction: column;
 
-  font-size: 1.25rem;
   grid-column: span 2;
   grid-row: span 3;
 
-  border-left: 2px solid grey;
+  border-left: 2px solid var(--theme-colour-primary-blue);
 
   justify-content: center;
   align-items: center;
 
+  background-color: var(--theme-colour-primary-blue);
+
+  color: white;
+}
+
+.priceDisplay>* {
+  font-size: 1.1rem;
+
+}
+
+.bookFlightButton {
+  margin-top: 30px;
+  /* margin-bottom: 20px; */
+
+  padding: 15px 10px;
+  border: none;
+  background-color: green;
+
+  background: #F4E29A;
+  background: linear-gradient(315deg, #F4E29A, #F4D76B);
+  border-radius: 5px;
+  color: black;
+
+  font-weight: 600;
+  /* font-weight: bold; */
 }
 
 .lineGraphic {

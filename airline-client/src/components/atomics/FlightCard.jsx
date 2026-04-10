@@ -14,7 +14,7 @@ function FlightCard({flightNumberString, originIcaoString, originAirportString, 
                 <div className={styles.priceDisplay}>
                     <p>Prices starting at</p>
                     <p className={`${spanStyles.positiveA1}`}>$399</p>
-                    <button>Book Flight</button>
+                    <button className={`${styles.bookFlightButton}`}>Booking Details</button>
                 </div>
                 <p className={`${styles.aptFullString}`}>{originAirportString}</p>
                 <p className={`${styles.stopInformationString}`}>0 stops</p>

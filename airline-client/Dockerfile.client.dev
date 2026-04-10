@@ -1,4 +1,4 @@
-# Dockerfile.client
+# Dockerfile.client.dev
 # For the development and testing build of the frontend client
 
 FROM node:latest

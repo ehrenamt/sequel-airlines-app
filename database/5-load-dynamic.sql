@@ -73,13 +73,13 @@ VALUES
 ('SAL1209', 'KEWR', 'CYUL', '20:05:00-05:00', '23:05:00-05:00', '{"A220-300", "B787-9", "A319 NEO", "E195"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, false, false, false, true, true, true]),
 
 
--- to Copenhagen
+-- Montreal to Copenhagen
 ('SAL2300', 'CYUL', 'EKCH', '06:00:00-05:00', '12:00:00-05:00', '{"A350-1000", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, true, true, true, true, true, true]),
 ('SAL2302', 'CYUL', 'EKCH', '10:00:00-05:00', '16:00:00-05:00', '{"A350-1000", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, true, true, true, true, true, true]),
 ('SAL2304', 'CYUL', 'EKCH', '14:00:00-05:00', '20:00:00-05:00', '{"A350-1000", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, true, true, true, true, true, true]),
 
 
--- from Copenhagen
+-- Copenhagen to Montreal
 ('SAL2301', 'EKCH', 'CYUL', '05:00:00-05:00', '11:00:00-05:00', '{"A350-1000", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, true, true, true, true, true, true]),
 ('SAL2303', 'EKCH', 'CYUL', '13:00:00-05:00', '19:00:00-05:00', '{"A350-1000", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, true, true, true, true, true, true]),
 ('SAL2305', 'EKCH', 'CYUL', '17:00:00-05:00', '23:00:00-05:00', '{"A350-1000", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, true, true, true, true, true, true]),
@@ -101,6 +101,12 @@ VALUES
 -- Istanbul Sabiha to Amsterdam - completed
 ('SAL2011', 'LTFJ', 'EHAM', '10:00:00-05:00', '14:00:00-05:00', '{"A319 NEO", "A220-300", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, false, true, true, true, true, true]),
 ('SAL2013', 'LTFJ', 'EHAM', '19:30:00-05:00', '23:30:00-05:00', '{"A319 NEO", "A220-300", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, false, true, true, true, true, true]),
+
+-- Amsterdam to Oslo Gardermoen
+('SAL2750', 'EHAM', 'ENGM', '10:00:00-05:00', '11:45:00-05:00', '{"A319 NEO", "A220-300", "E195"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, false, true, true, true, true, true]),
+
+-- Oslo Gardermoen to Amsterdam
+('SAL2751', 'ENGM', 'EHAM', '11:20:00-05:00', '13:05:00-05:00', '{"A319 NEO", "A220-300", "E195"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, false, true, true, true, true, true]),
 
 -- Vancouver to Tokyo
 ('SAL3100', 'CYVR', 'RJAA', '02:35:00-05:00', '15:15:00-05:00', '{"A350-1000", "B787-9"}'::core.aircraft_model_type[], '2025-06-6'::date, '2030-06-6'::date, ARRAY[true, true, true, true, true, true, true]),

@@ -148,6 +148,20 @@ CREATE TABLE core.trips (
 CREATE TABLE core.past_trips (LIKE core.trips INCLUDING ALL);
 
 
+-- Unlike trips which need to constantly be updated and referenced,
+-- we will assume tickets are static when issued, and as such
+-- there is no need to separate customer tickets into those of past trips
+-- and those of current trips.
+CREATE TABLE core.customer_tickets (
+    id SERIAL PRIMARY KEY,
+    trip_id INTEGER NOT NULL,
+    ticket_class TEXT NOT NULL,
+    seat_row INTEGER NOT NULL,
+    seat_position CHAR(1) NOT NULL,
+    FOREIGN KEY (trip_id) REFERENCES core.trips(id)
+);
+
+
 --------------------------------------------------------------------------------
 -- Indices
 --------------------------------------------------------------------------------
@@ -234,6 +248,8 @@ CREATE TABLE core.user_accounts (
     email TEXT NOT NULL,
     username TEXT NOT NULL,
     hashed_pwd TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     active BOOLEAN NOT NULL
 );

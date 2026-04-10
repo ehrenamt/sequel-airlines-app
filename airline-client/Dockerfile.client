@@ -1,17 +1,8 @@
 # Dockerfile.client
 # For the production build of the frontend client
 
-FROM node:22-alpine
+FROM nginx:stable-alpine
 
-WORKDIR /app
+COPY /dist /usr/share/nginx/html
  
-COPY package*.json ./
- 
-RUN npm install
-
-COPY . .
-
-EXPOSE 5173
-
-# currently dpeloying via the development server
-CMD ["npm", "run", "dev"]
+EXPOSE 80

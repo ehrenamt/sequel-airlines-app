@@ -108,6 +108,32 @@ def get_trip_information():
     return response, 200
 
 
+@app.route("/users/login", methods=["POST"])
+def authenticate_users():
+
+    users = {
+        'user2': 'password2'
+    }
+
+    supplied_uname = ""
+    supplied_pwd = ""
+
+    obj = request.form
+
+    print(obj['hashed_username'])
+    print(obj['hashed_password'])
+
+    # if True:
+        # return response, 401
+
+    return obj, 200
+
+
+@app.route("/users/logout", methods=["POST"])
+def logout_user():
+    return 200
+
+
 # admin routes
 
 

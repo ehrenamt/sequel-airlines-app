@@ -44,6 +44,9 @@ function SearchViewMain() {
             <FeatureGroup 
                 splitLayout={featureGridSplits.A2}
             />
+            <div >
+                <h1 className={styles.centeredDivMessage}>Book your next vacation today. You deserve it.</h1>
+            </div>
             <Footer></Footer>
         </div>
     )

@@ -32,8 +32,6 @@ h2 {
     background-color: var(--theme-colour-primary-blue);
 
     color: var(--theme-colour-secondary-white);
-
-    border-top: 2px white solid;
 }
 
 .featureCardContainer {
